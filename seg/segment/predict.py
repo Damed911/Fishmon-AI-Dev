@@ -29,9 +29,13 @@ import os
 import platform
 import sys
 from pathlib import Path
+import time
 
+import random
 import torch
 import torch.backends.cudnn as cudnn
+
+random.seed(1)
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[1]  # YOLOv5 root directory
@@ -108,6 +112,8 @@ def run(
     vid_path, vid_writer = [None] * bs, [None] * bs
 
     # Run inference
+    t0 = time.time()
+    startTime = 0
     model.warmup(imgsz=(1 if pt else bs, 3, *imgsz))  # warmup
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
     for path, im, im0s, vid_cap, s in dataset:
@@ -181,6 +187,13 @@ def run(
 
             # Stream results
             im0 = annotator.result()
+            if dataset.mode != 'image':
+                currentTime = time.time()
+
+                fps = 1/(currentTime - startTime)
+                startTime = currentTime
+
+                cv2.putText(im0, "FPS: ", str(int(fps)), (20, 70), cv2.FONT_HERSHEY_PLAIN, 2, (0,255,0), 2)
             if view_img:
                 if platform.system() == 'Linux' and p not in windows:
                     windows.append(p)
