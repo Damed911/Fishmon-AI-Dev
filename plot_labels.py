@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 import os
 
-data_dir = "C:\\Users\\Daffa Ajiputra\\Documents\\Skripsi\\Dataset Kapal bb\\combine"
+data_dir = "E:\\Dataset Kapal bb\\combine"
 
 # Load the image and its corresponding label file
-img = cv2.imread(os.path.join(data_dir, '00a72b4f-hiv00031-06912.jpeg'))
-img = cv2.resize(img, (1920, 1080))
-label_file = open(os.path.join(data_dir, '00a72b4f-hiv00031-06912.txt'), 'r')
+img = cv2.imread(os.path.join(data_dir, '00b8def2-hiv00387-07104.jpeg'))
+img = cv2.resize(img, (1280, 720))
+label_file = open(os.path.join(data_dir, 'result\\00b8def2-hiv00387-07104.txt'), 'r')
 
 # Loop through each line of the label file
 for line in label_file:

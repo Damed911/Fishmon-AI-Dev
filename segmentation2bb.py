@@ -1,7 +1,7 @@
 import os
 
 # Path to the directory containing images and annotations
-data_dir = "C:\\Users\\Daffa Ajiputra\\Documents\\Skripsi\\Dataset Kapal bb\\combine"
+data_dir = "E:\\Dataset Kapal bb\\combine"
 
 for img_file in os.listdir(data_dir):
     img_file_id = '.'.join(img_file.split('.')[:-1])
@@ -31,6 +31,7 @@ for img_file in os.listdir(data_dir):
         x, y, w, h = (xmin + xmax) / 2.0, (ymin + ymax) / 2.0, xmax - xmin, ymax - ymin
         
         new_labels.append(f"{object_class} {x} {y} {w} {h}")
-        
-    with open(os.path.join(data_dir, img_file_id + ".txt"), 'w') as f:
+
+    save_dir = os.path.join(data_dir, "result")
+    with open(os.path.join(save_dir, img_file_id + ".txt"), 'w') as f:
         f.write('\n'.join(new_labels))
