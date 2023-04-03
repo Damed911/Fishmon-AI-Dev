@@ -7,6 +7,6 @@ names:
 - squid
 - unknown
 nc: 6
-test: /home/damedane911/Documents/Skripsi/dataset-kapal/images/test
-train: /home/damedane911/Documents/Skripsi/dataset-kapal/images/train
-val: /home/damedane911/Documents/Skripsi/dataset-kapal/images/val
+test: /home/damedane911/Documents/Skripsi/dataset-kapal-bb/images/test
+train: /home/damedane911/Documents/Skripsi/dataset-kapal-bb/images/train
+val: /home/damedane911/Documents/Skripsi/dataset-kapal-bb/images/val

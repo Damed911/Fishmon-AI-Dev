@@ -11,8 +11,7 @@ import yaml
 
 from sklearn.model_selection import train_test_split
 
-FISH_NAMES = ['Black Sea Sprat', 'Gilt-Head Bream', 'Hourse Mackerel', 'Red Mullet', 
-              'Red Sea Bream', 'Sea Bass', 'Shrimp', 'Striped Red Mullet', 'Trout']
+FISH_NAMES = ['human', 'tuna', 'skipjack tuna', 'tongkol', 'squid', 'unknown']
 
 RANDOM_STATE = 42
 
