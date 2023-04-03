@@ -51,51 +51,6 @@ def gen_data(X_path, y_label, output_path, split):
     
     CONFIG[split] = images_path
 
-
-def split_data(data_path, output_path=None):
-    print("Splitting data ...")
-
-    x_images_path = []
-    y_labels = []
-
-    for i, label in enumerate(FISH_NAMES):
-        class_name_path = os.path.join(data_path, label, label)
-        for filename in os.listdir(class_name_path):
-            x_images_path.append((class_name_path, filename, label))
-            y_labels.append(i)
-
-    X_train, X_test, y_train, y_test = train_test_split(
-                                            x_images_path, 
-                                            y_labels, 
-                                            test_size=0.2,
-                                            stratify=y_labels,
-                                            random_state=RANDOM_STATE
-                                        )
-
-    X_train, X_val, y_train, y_val = train_test_split(
-                                            X_train, 
-                                            y_train, 
-                                            test_size=0.125, 
-                                            stratify=y_train,
-                                            random_state=RANDOM_STATE
-                                        )
-
-    print("Split data success!")
-    print(f'Total data : {len(x_images_path)}')
-    print(f'Train size : {len(X_train)} | {len(X_train)/len(x_images_path)*100}%')
-    print(f'Test size  : {len(X_test)} | {len(X_test)/len(x_images_path)*100}%')
-    print(f'Val size   : {len(X_val)} | {len(X_val)/len(x_images_path)*100}%')
-
-    if output_path is None:
-        output_path = data_path
-
-    print("Copying data ...")
-    gen_data(X_train, y_train, output_path, 'train')
-    gen_data(X_test, y_test, output_path, 'test')
-    gen_data(X_val, y_val, output_path, 'val')
-    print("Copying data success!")
-
-
 def main(args):
     data_path = args.data_path
 
@@ -134,8 +89,6 @@ def main(args):
 
             except Exception as e:
                 print(f'[Warning]: {e} Convert image with name {filename} is failed!')
-
-    split_data(data_path, args.output_path)
 
     with open(r'./data/fish.yaml', 'w') as file:
         conf = yaml.dump(CONFIG, file)
