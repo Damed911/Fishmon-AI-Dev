@@ -193,7 +193,7 @@ def run(
                 fps = 1/(currentTime - startTime)
                 startTime = currentTime
 
-                cv2.putText(im0, "FPS: ", str(int(fps)), (20, 70), cv2.FONT_HERSHEY_PLAIN, 2, (0,255,0), 2)
+                cv2.putText(im0, "FPS: " + str(int(fps)), (20, 70), cv2.FONT_HERSHEY_PLAIN, 5, (0,255,0), 2)
             if view_img:
                 if platform.system() == 'Linux' and p not in windows:
                     windows.append(p)
