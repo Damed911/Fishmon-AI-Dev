@@ -11,4 +11,4 @@ model = torch.load("runs/train/yolov7-800/weights/best.pt", map_location=device)
 
 # print(f"There are {n_p} Trainable Parameters")
 
-summary(model.to(torch.float), input_size=(4,3,800,800))
+summary(model.to(torch.float), input_size=(7,3,640,640))
