@@ -1,0 +1,12 @@
+is_coco: false
+names:
+- human
+- tuna
+- skipjack tuna
+- tongkol
+- squid
+- unknown
+nc: 6
+test: /home/damedane911/Documents/Skripsi/Dataset-video/images/test
+train: /home/damedane911/Documents/Skripsi/Dataset-video/images/train
+val: /home/damedane911/Documents/Skripsi/Dataset-video/images/val
