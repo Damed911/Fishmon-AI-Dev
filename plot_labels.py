@@ -5,9 +5,9 @@ import os
 data_dir = "E:\\Dataset Kapal bb\\combine"
 
 # Load the image and its corresponding label file
-img = cv2.imread(os.path.join(data_dir, '00b8def2-hiv00387-07104.jpeg'))
+img = cv2.imread(os.path.join(data_dir, '0a52c365-hiv00383-08160.jpeg'))
 img = cv2.resize(img, (1280, 720))
-label_file = open(os.path.join(data_dir, 'result\\00b8def2-hiv00387-07104.txt'), 'r')
+label_file = open(os.path.join(data_dir, 'result\\0a52c365-hiv00383-08160.txt'), 'r')
 
 # Loop through each line of the label file
 for line in label_file:
