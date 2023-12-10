@@ -1,4 +1,4 @@
-Fishmon adalah sebuah proyek untuk mengembangkan sebuah sistem pendeteksian yang bisa membedakan jenis ikan hasil tangkapan nelayan di laut. Tujuan dikembangkan sistem ini adalah untuk mencegah terjadinya IUU (_Illegal, Unreported, Unregulated_) Fishing.
+The objective of Fishmon is to create a detection system that can identify different species of fish that are collected by marine fishermen. The purpose of this system is to stop illegal, unreported, and unregulated (IUU) fishing.
 
 ## Development Result
 
